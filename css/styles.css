@@ -546,7 +546,8 @@ overflow: hidden;
      align-items: center;
      opacity: 0;
     pointer-events: none;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
  .backdrop.is-open {
@@ -558,30 +559,32 @@ overflow: hidden;
      border-radius: 4px;
      width: 408px;
      height: 80%;
-     max-height: 584px;
+     min-height: 584px;
      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
      background: #fcfcfc;
      position: relative;
-     padding-left: 24px;
-     padding-right: 24px;
+     padding: 72px 24px 24px 24px;
      overflow-y: auto;
  }
  .close-modal {
     position: absolute;
+    padding: 0;
     top: 24px;
     right: 24px;
-    border-radius: 100%;
+    border-radius: 50%;
     background-color: #e7e9fc;
     stroke-width: 1px;
-    border-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     width: 24px;
     height: 24px;
     cursor: pointer;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
  .close-modal:hover,
  .close-modal:focus {
     background-color: #404BBF;
+    border: none;
  }
  .modal-title {
         line-height: 1.5;
@@ -608,7 +611,7 @@ overflow: hidden;
     display: block;
  }
  .label-field {
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
     font-weight: 400;
@@ -620,6 +623,7 @@ overflow: hidden;
  }
  .field-wrapper {
     position: relative;
+    margin-bottom: 24px;
  }
  .text-field {
     border: 1px solid rgba(46, 47, 66, 0.4);
@@ -630,6 +634,7 @@ overflow: hidden;
     padding-left: 38px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     color: #2E2F42;
+    outline: transparent;
 
  }
  .text-field:focus {
@@ -652,18 +657,24 @@ overflow: hidden;
     border-radius: 4px;
     width: 100%;
     height: 120px;
-    padding: 16px 8px;
+    padding: 8px 16px;
     resize: none;
     background-color: transparent;
     outline: none;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    font-weight: 400;
+    font-size: 12px;
+    outline: transparent;
 
  }
  .comment-textarea:focus {
     border-color: #4d5ae5;
  }
  .comment-textarea::placeholder {
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
      color: rgba(46, 47, 66, 0.4);
     font-weight: 400;
@@ -672,19 +683,26 @@ overflow: hidden;
  .button-submit {
     border-radius: 4px;
     padding: 16px 32px;
-    width: 169px;
+    min-width: 169px;
     height: 56px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     background-color: #4d5ae5;
     display: block;
     margin: 0 auto;
     margin-bottom: 24px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
  .policy-link {
     text-decoration: underline;
  }
  .policy-label {
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
     font-weight: 400;
@@ -700,7 +718,8 @@ overflow: hidden;
     border-radius: 2px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     fill: #f4f4fd;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1)
  }
  .policy-checkbox:checked + .policy-label > .custom-checkbox {
     background-color: #404bbf;
