@@ -743,4 +743,5 @@ overflow: hidden;
  .policy-checkbox:checked + .policy-label > .custom-checkbox {
     background-color: #404bbf;
     border: none;
+    fill: #F4F4FD;
  }
